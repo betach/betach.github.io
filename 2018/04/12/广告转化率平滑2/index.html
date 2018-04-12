@@ -84,14 +84,14 @@
 <meta name="description" content="广告转化率平滑背景   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告">
 <meta name="keywords" content="CTR 贝叶斯平滑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="广告转化率平滑1">
-<meta property="og:url" content="http://yoursite.com/2018/04/12/广告转化率平滑1/index.html">
+<meta property="og:title" content="广告转化率平滑2">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/广告转化率平滑2/index.html">
 <meta property="og:site_name" content="见夏落安">
 <meta property="og:description" content="广告转化率平滑背景   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T18:10:53.736Z">
+<meta property="og:updated_time" content="2018-04-12T18:33:08.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="广告转化率平滑1">
+<meta name="twitter:title" content="广告转化率平滑2">
 <meta name="twitter:description" content="广告转化率平滑背景   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告">
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/12/广告转化率平滑1/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/12/广告转化率平滑2/"/>
 
 
 
 
 
-  <title>广告转化率平滑1 | 见夏落安</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>广告转化率平滑2 | 见夏落安</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/广告转化率平滑1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/广告转化率平滑2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="景行">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">广告转化率平滑1</h1>
+          <h1 class="post-title" itemprop="name headline">广告转化率平滑2</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,12 @@
       
 
       
-        <h2 id="广告转化率平滑"><a href="#广告转化率平滑" class="headerlink" title="广告转化率平滑"></a><strong>广告转化率平滑</strong></h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h3><p>   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告，此时只被点击了一次，但恰好被转化，此时计算得到转化率为100%，无疑这时的转化率估计是偏高的2.当点击次数过多，而转化次数过少，此时计算得到的转化率往往会比实际水平偏低。对于这种由于点击次数、转化次数预估不准确引起的误差，我们将采用贝叶斯平滑方法进行修正。</p>
-<h3 id="理论推导"><a href="#理论推导" class="headerlink" title="理论推导"></a><strong>理论推导</strong></h3><p>   对于某个被点击的广告，其是否发生转化服从伯努利分布，即$X \thicksim Ber(r)$，其中r为转化。$\sum_{j=1}^n x_j $可认为是该广告的转化次数，记为$A$；$n$为该广告的点击次数，记为$C$。而二项分布为指数族分布，因此可以通过共轭先验给出$r$的先验分布，即$\pi\left(r\right)~Beta(\alpha,\beta)$。在已知$r$的先验分布基础上，选择用贝叶斯估计估计未知参数$r$。<br>    基于此,可以得到：<script type="math/tex">f(x\mid r) = r^A(1-r)^{n-A}</script> <script type="math/tex">\pi(r)= \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)+\Gamma(\beta)}r^{\alpha-1}(1-r)^{\beta-1}</script><br>根据共轭先验定义，可知$r$的后验分布也服从$Beta$分布。再根据贝叶斯公式，进一步推导得到$r$的后验分布为$\pi\left(r\mid x\right)\thicksim Beta(\alpha+A,C-A+\beta)$。此时，根据贝叶斯估计核心思想可知：使得贝叶斯风险函数最小的参数极为估计参数。而给定损失函数为平方误差函数，得到$r$的估计值即为在$r$上的期望，即$ \hat{r}=\frac{\alpha+A}{C+\alpha+\beta}$。</p>
+        <h2 id="广告转化率平滑"><a href="#广告转化率平滑" class="headerlink" title="广告转化率平滑"></a>广告转化率平滑</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h3><p>   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告，此时只被点击了一次，但恰好被转化，此时计算得到转化率为100%，无疑这时的转化率估计是偏高的2.当点击次数过多，而转化次数过少，此时计算得到的转化率往往会比实际水平偏低。对于这种由于点击次数、转化次数预估不准确引起的误差，我们将采用贝叶斯平滑方法进行修正。</p>
+<h3 id="理论推导"><a href="#理论推导" class="headerlink" title="理论推导"></a><strong>理论推导</strong></h3><p>   对于某个被点击的广告，其是否发生转化服从伯努利分布，即$X \thicksim Ber(r)$，其中r为转化。$\sum_{j=1}^n x_j $可认为是该广告的转化次数，记为$A$；$n$为该广告的点击次数，记为$C$。而二项分布为指数族分布，因此可以通过共轭先验给出$r$的先验分布，即$\pi\left(r\right)~Beta(\alpha,\beta)$。在已知$r$的先验分布基础上，选择用贝叶斯估计估计未知参数$r$。<br>    基于此,可以得到：<script type="math/tex">f(x\mid r) = r^A(1-r)^{n-A}</script> <script type="math/tex">\pi(r)= \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)+\Gamma(\beta)}r^{\alpha-1}(1-r)^{\beta-1}</script><br>根据共轭先验定义，可知$r$的后验分布也服从$Beta$分布。再根据贝叶斯公式，进一步推导得到$r$的后验分布为$\pi\left(r\mid x\right)\thicksim Beta(\alpha+A,C-A+\beta)$。此时，根据贝叶斯估计核心思想可知：使得贝叶斯风险函数最小的参数极为估计参数。而给定损失函数为平方误差函数，得到$r$的估计值即为在$r$上的期望，即$ \hat{r}=\frac{\alpha+A}{C+\alpha+\beta}$。<br>    为了得到最终的转化率估计，需要求解参数$\alpha,\beta$的估计$\hat{\alpha},\hat{\beta}$。而基于广告的层级结构,可知每个广告的转化率$r_i$服从同一个$Beta$分布。此时考虑N个独立广告$X_1,X_2\cdots X_n$，其转化率的似然函数为$P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)$，由于转化次数与点击次数都是相互独立的，则：</p>
+<script type="math/tex; mode=display">\begin{align}P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta) 
+&= \prod_{i=1}^n {P(A_i \mid C_i,\alpha,\beta)} \\
+&= \prod_{i=1}^n {\int_{r_i} {P(A_i,r_i \mid C_i)P(C_i,\alpha,\beta)}}{\rm d}r_i \\
+&= \prod_{i=1}^n {\int_{r_i} {P(A_i \mid r_i,C_i)P(r_i \mid \alpha,\beta)}}{\rm d}r_i \end{align}</script><p>对每个广告而言，已知：<script type="math/tex">P(A_i \mid r_i,C_i)=r_i^{C_i}(1-r)^{C_i-A_i}</script> <script type="math/tex">P(r_i \mid \alpha,\beta)= \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)+\Gamma(\beta)}r_i^{\alpha-1}(1-r_i)^{\beta-1}</script></p>
 
       
     </div>
