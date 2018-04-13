@@ -3,15 +3,6 @@
   
     
     <entry>
-      <title>test</title>
-      <link href="/2018/04/13/test/"/>
-      <url>/2018/04/13/test/</url>
-      <content type="html"><![CDATA[<script type="math/tex; mode=display">{\rm d}{\log P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)}</script><script type="math/tex; mode=display">{\rm d}\alpha</script><script type="math/tex; mode=display">=\sum_{i=1}^N {\Psi(A_i+\alpha)-\Psi(\alpha)}-\Psi(C_i+\alpha+\beta)+\Psi(A_i+\alpha)-\Psi(\alpha)</script><script type="math/tex; mode=display">\frac{d{\log P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)}}{d\alpha}</script>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
       <title>广告转化率平滑</title>
       <link href="/2018/04/12/%E5%B9%BF%E5%91%8A%E8%BD%AC%E5%8C%96%E7%8E%87%E5%B9%B3%E6%BB%91/"/>
       <url>/2018/04/12/%E5%B9%BF%E5%91%8A%E8%BD%AC%E5%8C%96%E7%8E%87%E5%B9%B3%E6%BB%91/</url>
@@ -23,15 +14,6 @@
             <tag> CTR 贝叶斯平滑 </tag>
             
         </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2018/04/10/hello-world/"/>
-      <url>/2018/04/10/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
       
     </entry>
     
