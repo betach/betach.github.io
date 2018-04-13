@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="见夏落安">
 <meta property="og:description" content="背景   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告，此时只被点击">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T19:04:30.242Z">
+<meta property="og:updated_time" content="2018-04-13T04:43:49.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="广告转化率平滑">
 <meta name="twitter:description" content="背景   广告转化率（CVR）是一个广告的被转化次数于被点击次数的比值，是度量广告投放效果的一个重要指标。基于CPA等转化行为结算的广告，广告媒介往往要根据CVR来选择广告以及确定广告顺序。但是在预测CVR时，由于数据的稀疏性，若直接利用广告的历史被转化次数于被点击次数的比值作为实际CVR的估计往往会具有较大的偏差。造成这种偏差的原因主要有：1.当点击次数过少，譬如对于一个新上线广告，此时只被点击">
@@ -332,8 +332,14 @@
 <script type="math/tex; mode=display">\begin{align}P(A_1\cdots,A_n\mid C_1\cdots,C_n,\alpha,\beta)
 &= \prod_{i=1}^n {\int_{r_i} {P(A_i \mid r_i,C_i)P(r_i \mid \alpha,\beta)}}{\rm d}r_i \\
 &= \prod_{i=1}^n {\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)+\Gamma(\beta)}}{\frac{\Gamma(\alpha+A_i)}{\Gamma(\alpha)}}{\frac{\Gamma(C_i-A_i+\beta)}{\Gamma(\beta)}}\end{align}</script><p>为了求得该似然函数的最大值，对其取对数，则</p>
-<script type="math/tex; mode=display">\log P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)= \sum_{i=1}^N {ln\Gamma(\alpha+\beta)-ln\Gamma(C_i+\alpha+\beta)\\
-+ln\Gamma(\alpha+A_i)-ln\Gamma(\alpha)+ln\Gamma(C_i-A_i+\beta)-ln\Gamma(\beta)}</script><p>将上述对数似然函数关于求导数，得到：<br>通过 the fixed-point iteration 方法，可得到如下结果：</p>
+<script type="math/tex; mode=display">\log P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)\\
+= \sum_{i=1}^N {ln\Gamma(\alpha+\beta)-ln\Gamma(C_i+\alpha+\beta)+ln\Gamma(\alpha+A_i)\\
+-ln\Gamma(\alpha)+ln\Gamma(C_i-A_i+\beta)-ln\Gamma(\beta)}</script><p>将上述对数似然函数关于求导数，得到：</p>
+<script type="math/tex; mode=display">\frac{d{\log P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)}}{d\alpha}\\
+=\sum_{i=1}^N {\Psi(A_i+\alpha)-\Psi(\alpha)}-\Psi(C_i+\alpha+\beta)+\Psi(A_i+\alpha)\\
+-\Psi(\alpha)</script><script type="math/tex; mode=display">\frac{d\log P(A_1,A_2\cdots,A_n\mid C_1,C_2\cdots,C_n,\alpha,\beta)}{d\beta}\\
+=\sum_{i=1}^N {\Psi(A_i+\alpha)-\Psi(\alpha)}-\Psi(C_i+\alpha+\beta)+\Psi(C_i-A_i+\beta)\\
+-\Psi(\beta)</script><p>其中,$\Psi(x)=\frac{d}{dx}\ln\Gamma(x)$。通过 the fixed-point iteration 方法，可得到如下结果：</p>
 <script type="math/tex; mode=display">\alpha^{new}=\alpha\frac{\sum_{i=1}^N [{\Psi(A_i+\alpha)-\Psi(\alpha)}]}{\sum_{i=1}^N [{\Psi(C_i+\alpha+\beta)-\Psi(\alpha+\beta)}]}</script><script type="math/tex; mode=display">\beta^{new}=\beta\frac{\sum_{i=1}^N [{\Psi(C_i-A_i+\beta)-\Psi(\beta)}]}{\sum_{i=1}^N [{\Psi(C_i+\alpha+\beta)-\Psi(\alpha+\beta)}]}</script><p>从上述的公式中迭代求得$\hat{\alpha},\hat{\beta}$，代入公式得到每个广告转化率的估计：$ \hat{r}=\frac{\alpha+A}{C+\alpha+\beta}$</p>
 
       
